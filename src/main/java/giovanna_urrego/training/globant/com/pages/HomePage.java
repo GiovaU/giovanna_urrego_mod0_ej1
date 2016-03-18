@@ -33,7 +33,6 @@ public class HomePage {
     searchSubmit.submit();
     WebDriverWait wait = new WebDriverWait(driver, 10000);
     String text = (wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("entry-title")))).getText();
-    System.out.println("Imprimo"+text);
     return text;
   }
 

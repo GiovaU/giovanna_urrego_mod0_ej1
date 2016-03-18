@@ -35,7 +35,7 @@ public class Tests {
   public void verifySearch(){
     HomePage homePage = PageFactory.initElements(driver, HomePage.class);
     homePage.go(driver);
-    Assert.assertEquals("Nothing Found", homePage.search(driver, "testing"));
+    Assert.assertEquals("Nothing Found", homePage.search(driver, "nanan"));
   }
   
   //@Test
