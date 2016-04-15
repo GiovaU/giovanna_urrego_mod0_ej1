@@ -44,7 +44,10 @@ public class Tests {
 	HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 	homePage.go(driver);
 	System.out.println("FECHA" + homePage.dateTime(driver));
-	System.out.println("FECHA TEXTO" + homePage.dateTimeText(driver));
+	String lista[] = homePage.dateTimeText(driver);
+	System.out.println("FECHA TEXTO");
+	homePage.imprimirArray(lista);
+	homePage.clickLinks(driver);
   }
   
 
