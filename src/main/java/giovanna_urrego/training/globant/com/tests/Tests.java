@@ -17,6 +17,7 @@ public class Tests {
   @BeforeMethod
   public void before() {
     driver = new FirefoxDriver();
+    driver.manage().window().maximize();
   }
 
 /*  @AfterMethod
@@ -31,14 +32,20 @@ public class Tests {
     Assert.assertEquals("Automation Training | Aprender a automatizar en un solo sitio", homePage.getPageTitle(driver));
   }*/
   
-  @Test
+/*  @Test
   public void verifySearch(){
     HomePage homePage = PageFactory.initElements(driver, HomePage.class);
     homePage.go(driver);
     Assert.assertEquals("Nothing Found", homePage.search(driver, "nanan"));
-  }
+  }*/
   
-  //@Test
+  @Test
+  public void verifyDisplayedDate(){
+	HomePage homePage = PageFactory.initElements(driver, HomePage.class);
+	homePage.go(driver);
+	System.out.println("FECHA" + homePage.dateTime(driver));
+	System.out.println("FECHA TEXTO" + homePage.dateTimeText(driver));
+  }
   
 
 }

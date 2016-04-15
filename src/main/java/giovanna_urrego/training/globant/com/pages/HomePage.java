@@ -18,6 +18,9 @@ public class HomePage {
   @FindBy(id="searchsubmit")
   private WebElement searchSubmit;
   
+  @FindBy(css="div time")
+  private WebElement time;
+  
   
 
   public void go(WebDriver driver) {
@@ -34,6 +37,16 @@ public class HomePage {
     WebDriverWait wait = new WebDriverWait(driver, 10000);
     String text = (wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("entry-title")))).getText();
     return text;
+  }
+  
+  public String dateTime(WebDriver driver) {
+	  String dateTime = time.getAttribute("datetime");
+	  return dateTime;
+  }
+  
+  public String dateTimeText (WebDriver driver){
+	  String dateTimeText = time.getText();
+	  return dateTimeText;
   }
 
 }
